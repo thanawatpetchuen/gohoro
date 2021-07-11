@@ -1,0 +1,14 @@
+selenium:
+  port: 8080
+  path: ./driver/selenium-server-standalone-3.141.59.jar
+
+chromeDriver:
+  path: ./driver/chromedriver.exe
+  headless: true
+  muteAudio: true
+
+soundcloud:
+  userProfileUrl: https://soundcloud.com/thanawat-xxi
+  songName: https://soundcloud.com/thanawat-xxi/fai
+
+workers: 5
