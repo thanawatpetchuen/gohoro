@@ -1,14 +1,14 @@
 selenium:
   port: 8080
   path: ./driver/selenium-server-standalone-3.141.59.jar
+  debug: false
 
 chromeDriver:
   path: ./driver/chromedriver.exe
   headless: true
   muteAudio: true
 
-soundcloud:
-  userProfileUrl: https://soundcloud.com/thanawat-xxi
-  songName: https://soundcloud.com/thanawat-xxi/fai
+horoSite:
+  url: https://www.myhora.com/%e0%b8%9b%e0%b8%8f%e0%b8%b4%e0%b8%97%e0%b8%b4%e0%b8%99/%e0%b8%95%e0%b8%a3%e0%b8%a7%e0%b8%88%e0%b8%aa%e0%b8%ad%e0%b8%9a%e0%b8%a7%e0%b8%b1%e0%b8%99%e0%b9%80%e0%b8%94%e0%b8%b7%e0%b8%ad%e0%b8%99%e0%b8%9b%e0%b8%b5-%e0%b8%aa%e0%b8%b8%e0%b8%a3%e0%b8%b4%e0%b8%a2%e0%b8%84%e0%b8%95%e0%b8%b4-%e0%b8%88%e0%b8%b1%e0%b8%99%e0%b8%97%e0%b8%a3%e0%b8%84%e0%b8%95%e0%b8%b4.aspx
 
-workers: 5
+workers: 1

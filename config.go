@@ -1,10 +1,12 @@
 package main
 
-import "github.com/spf13/viper"
+import (
+	"github.com/spf13/viper"
+)
 
 type Config struct {
 	ChromeDriver ChromeDriver `mapstructure:"chromeDriver"`
-	SoundCloud   SoundCloud   `mapstructure:"soundcloud"`
+	HoroSite     HoroSite     `mapstructure:"horoSite"`
 	Selenium     Selenium     `mapstructure:"selenium"`
 	Workers      int
 }
@@ -16,13 +18,13 @@ type ChromeDriver struct {
 }
 
 type Selenium struct {
-	Path string `mapstructure:"path"`
-	Port int    `mapstructure:"port"`
+	Path  string `mapstructure:"path"`
+	Port  int    `mapstructure:"port"`
+	Debug bool   `mapstructure:"debug"`
 }
 
-type SoundCloud struct {
-	UserProfileURL string `mapstructure:"userProfileUrl"`
-	SongName       string `mapstructure:"songName"`
+type HoroSite struct {
+	URL string `mapstructure:"url"`
 }
 
 func NewConfig() (*Config, error) {

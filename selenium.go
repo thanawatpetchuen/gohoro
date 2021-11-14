@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/tebeka/selenium"
@@ -9,13 +10,16 @@ import (
 )
 
 func NewSelenium(seleniumCfg Selenium, driverConfig ChromeDriver) (*selenium.Service, error) {
-
+	selenium.SetDebug(false)
 	opts := []selenium.ServiceOption{
 		// selenium.StartFrameBuffer(),             // Start an X frame buffer for the browser to run in.
 		selenium.ChromeDriver(driverConfig.Path), // Specify the path to GeckoDriver in order to use Firefox.
 		selenium.Output(os.Stderr),               // Output debug information to STDERR.
 	}
-	selenium.SetDebug(true)
+	if seleniumCfg.Debug {
+		log.Println("Debug Mode")
+		selenium.SetDebug(true)
+	}
 	return selenium.NewSeleniumService(seleniumCfg.Path, seleniumCfg.Port, opts...)
 }
 

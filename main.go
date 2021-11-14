@@ -18,7 +18,7 @@ func main() {
 	if *iter > 0 {
 		log.Println("[Iteration mode]")
 		for i := 1; i <= *iter; i++ {
-			app.Start(i, nil)
+			app.Start(i, nil, nil)
 		}
 	} else {
 		log.Println("[Multithread mode]")
@@ -27,7 +27,7 @@ func main() {
 
 		for i := 1; i <= workers; i++ {
 			wg.Add(1)
-			go app.Start(i, &wg)
+			go app.Start(i, &wg, nil)
 		}
 
 		wg.Wait()
